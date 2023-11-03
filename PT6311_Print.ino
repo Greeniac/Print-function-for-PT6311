@@ -538,7 +538,6 @@ void loop() {
   // numbers();
 }
 void vfdprint(String text){
-  clear_VFD(); 
   send_char(0x03,convert(text[0],0),convert(text[0],1),convert(text[0],2));
   send_char(0x06,convert(text[1],0),convert(text[1],1),convert(text[1],2));
   send_char(0x09,convert(text[2],0),convert(text[2],1),convert(text[2],2));
