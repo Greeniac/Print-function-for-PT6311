@@ -25,6 +25,14 @@ https://github.com/emsyscode/PT6311-_Philips-_LX3700/blob/main/PT6311_philips_LX
 
 3- Flash!
 
-edit vfdprint(); in Setup() to display whatever you want, note that the function only takes strings that are capital letters and numbers, small letters and symbols are not implemented 
+edit vfdprint(); in Setup() to display whatever you want, note that the function only takes strings that are capital letters and numbers, small letters and symbols are not implemented and you can use String() to convert integers to string eg. 
+vfdprint(String(2560));
+
+
+
+
+
+
+
 
 
