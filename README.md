@@ -11,6 +11,7 @@ This code is related with the: https://youtu.be/Kt1JU3t7QJg
 HOW TO USE:
 
 1- Define the pins
+
 2- You might have to change the letter/numbers if your display uses diffrent bits for each segments, if you need to, try the designs from these links:
 
 https://github.com/emsyscode/PT6311/blob/master/PT6311_6grids_arduino_v3.ino   
