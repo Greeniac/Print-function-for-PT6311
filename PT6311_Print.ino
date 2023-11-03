@@ -463,7 +463,7 @@ unsigned char convert(char in,int num){
     return letterX[num];
   break;
     case 'Y':
-    return letterW[num];
+    return letterY[num];
   break;
     case 'Z':
     return letterZ[num];
