@@ -1,7 +1,7 @@
 
 #define VFD_data 8// If 0 write LCD, if 1 read of LCD
 #define VFD_clk 9 // if 0 is a command, if 1 is a data0
-#define VFD_ce 10 // Must be pulsed to LCD fetch data of bus // STB //
+#define VFD_ce 10 // OR SS / CS / STB   /// Must be pulsed to LCD fetch data of bus 
 
   //    Numbers design      
   unsigned char number0[]={(0b11001100),(0b11001100),(0b00000000)}; // 0 unsigned char number0[]={(0b10001000),(0b10000001),(0b00000011)}; // 0
@@ -205,7 +205,7 @@ void setup() {
   pinMode(VFD_ce, OUTPUT);
 
   pt6311_init();
- vfdprint("ESP32 S3");
+ vfdprint("DINGUS");
 }
 void clear_VFD(void){
   int sum=0;
@@ -429,8 +429,11 @@ unsigned char convert(char in,int num){
     case 'M':
     return letterM[num];
   break;
-    case 'O':
+      case 'N':
     return letterN[num];
+  break;
+    case 'O':
+    return letterO[num];
   break;
     case 'P':
     return letterP[num];
@@ -498,6 +501,9 @@ unsigned char convert(char in,int num){
   case ' ':
   return letterSpace[num];
   break;
+  case NULL:
+   return letterSpace[num];
+  break;
   }
 }
 void numbers(){
@@ -531,8 +537,8 @@ void loop() {
   // characters();
   // numbers();
 }
-void vfdprint(char* text){
-  clear_VFD();
+void vfdprint(String text){
+  clear_VFD(); 
   send_char(0x03,convert(text[0],0),convert(text[0],1),convert(text[0],2));
   send_char(0x06,convert(text[1],0),convert(text[1],1),convert(text[1],2));
   send_char(0x09,convert(text[2],0),convert(text[2],1),convert(text[2],2));
